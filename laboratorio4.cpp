@@ -110,4 +110,27 @@ int main() {
         cout << "0. Salir\n";
         cout << "Opcion: ";
         cin >> op;
+ switch (op) {
+            case 1: insertarFinal(head, tail); break;
+            case 2: insertarInicio(head, tail); break;
+            case 3: mostrarAdelante(head); break;
+            case 4: mostrarAtras(tail); break;
+            case 5:
+                cout << "ID a buscar: ";
+                cin >> id;
+                cout << (buscarPorId(head, id) ? "Existe\n" : "No existe\n");
+                break;
+            case 6:
+                cout << "ID a eliminar: ";
+                cin >> id;
+                cout << (eliminarPorId(head, tail, id) ? "Eliminado\n" : "No encontrado\n");
+                break;
+            case 7:
+                cout << "Cantidad de paquetes: " << contarPaquetes(head) << endl;
+                break;
+            case 8:
+                editarPaquete(head);
+                break;
+        }
+
 
