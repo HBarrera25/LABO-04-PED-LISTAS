@@ -57,3 +57,26 @@ int contarPaquetes(Nodo* head) {
     }
     return cont;
 }
+
+// ----- EXTRA: Editar paquete -----
+void editarPaquete(Nodo* head) {
+    int id;
+    cout << "ID a editar: ";
+    cin >> id;
+
+    while (head != NULL) {
+        if (head->id == id) {
+            cout << "Nuevo nombre: ";
+            cin.ignore();
+            getline(cin, head->nombre);
+
+            cout << "Nuevo peso: ";
+            cin >> head->peso;
+
+            cout << "Paquete actualizado.\n";
+            return;
+        }
+        head = head->sig;
+    }
+    cout << "ID no encontrado.\n";
+}
