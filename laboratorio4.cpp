@@ -87,6 +87,20 @@ void insertarFinal(Nodo*& head, Nodo*& tail) {
     }
 }
 
+// Funcion mostrar adelante
+void mostrarAdelante(Nodo* head) {
+    if (head == NULL) {
+        cout << "Lista vacia.\n";
+        return;
+    }
+
+    while (head != NULL) {
+        cout << "[" << head->id << "] "
+             << head->nombre << " - "
+             << head->peso << "kg\n";
+        head = head->sig;
+    }
+}
 
 // Buscar por ID 
 bool buscarPorId(Nodo* head, int id) {
