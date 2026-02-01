@@ -23,8 +23,39 @@ void insertarFinal(Nodo*& head, Nodo*& tail);
 void mostrarAdelante(Nodo* head);
 void mostrarAtras(Nodo* tail);
 
+//Funcion insertar al inicio
+void insertarInicio(Nodo*& head, Nodo*& tail) {
+    int id;
+    cout << "ID: ";
+    cin >> id;
 
-// ----- Buscar por ID -----
+    if (buscarPorId(head, id)) {
+        cout << "ID repetido.\n";
+        return;
+    }
+
+    Nodo* nuevo = new Nodo();
+    nuevo->id = id;
+
+    cout << "Nombre: ";
+    cin.ignore();
+    getline(cin, nuevo->nombre);
+
+    cout << "Peso: ";
+    cin >> nuevo->peso;
+
+    nuevo->ant = NULL;
+    nuevo->sig = head;
+
+    if (head == NULL) {
+        head = tail = nuevo;
+    } else {
+        head->ant = nuevo;
+        head = nuevo;
+    }
+}
+
+// Buscar por ID 
 bool buscarPorId(Nodo* head, int id) {
     while (head != NULL) {
         if (head->id == id)
@@ -33,7 +64,7 @@ bool buscarPorId(Nodo* head, int id) {
     }
     return false;
 }
-// ----- Eliminar por ID -----
+// Eliminar por ID
 bool eliminarPorId(Nodo*& head, Nodo*& tail, int id) {
     if (head == NULL) return false;
 
@@ -65,7 +96,7 @@ bool eliminarPorId(Nodo*& head, Nodo*& tail, int id) {
     }
     return false;
 }
-// ----- Contar paquetes -----
+// Contar paquetes 
 int contarPaquetes(Nodo* head) {
     int cont = 0;
     while (head != NULL) {
@@ -75,7 +106,7 @@ int contarPaquetes(Nodo* head) {
     return cont;
 }
 
-// ----- EXTRA: Editar paquete -----
+// EXTRA: Editar paquete 
 void editarPaquete(Nodo* head) {
     int id;
     cout << "ID a editar: ";
@@ -98,7 +129,7 @@ void editarPaquete(Nodo* head) {
     cout << "ID no encontrado.\n";
 }
 
-// ----- Liberar memoria -----
+//  Liberar memoria 
 void liberarLista(Nodo*& head, Nodo*& tail) {
     while (head != NULL) {
         Nodo* borrar = head;
@@ -107,7 +138,7 @@ void liberarLista(Nodo*& head, Nodo*& tail) {
     }
     tail = NULL;
 }
-// ----- MAIN -----
+
 int main() {
     Nodo* head = NULL;
     Nodo* tail = NULL;
