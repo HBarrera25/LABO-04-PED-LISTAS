@@ -22,8 +22,8 @@ Se implementó la opción **Editar paquete**, que permite:
 - Modificar el nombre y el peso del paquete existente.
 
 ### Sobre colocación de punto extra
-Heraldo Riquelmy Barrera Gómez -> Siguiente laboratorio
-Jorge Alberto Escobar Menjivar -> Laboratorio 03
+-Heraldo Riquelmy Barrera Gómez -> Siguiente laboratorio.
+-Jorge Alberto Escobar Menjivar -> Laboratorio 03.
 
 ## 👥 Integrantes:
 
