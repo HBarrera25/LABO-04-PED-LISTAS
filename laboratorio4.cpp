@@ -132,5 +132,10 @@ int main() {
                 editarPaquete(head);
                 break;
         }
+           } while (op != 0);
+
+    liberarLista(head, tail);
+    return 0;
+}
 
 
