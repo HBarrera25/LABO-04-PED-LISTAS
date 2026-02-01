@@ -16,3 +16,35 @@ bool buscarPorId(Nodo* head, int id) {
     }
     return false;
 }
+// ----- Eliminar por ID -----
+bool eliminarPorId(Nodo*& head, Nodo*& tail, int id) {
+    if (head == NULL) return false;
+
+    Nodo* act = head;
+
+    while (act != NULL) {
+        if (act->id == id) {
+
+            if (act == head) {
+                head = act->sig;
+                if (head != NULL)
+                    head->ant = NULL;
+                else
+                    tail = NULL;
+            }
+            else if (act == tail) {
+                tail = act->ant;
+                tail->sig = NULL;
+            }
+            else {
+                act->ant->sig = act->sig;
+                act->sig->ant = act->ant;
+            }
+
+            delete act;
+            return true;
+        }
+        act = act->sig;
+    }
+    return false;
+}
