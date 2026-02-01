@@ -191,7 +191,7 @@ void editarPaquete(Nodo* head) {
     cout << "ID no encontrado.\n";
 }
 
-//  Liberar memoria 
+//  Funcion liberar lista(memoria) 
 void liberarLista(Nodo*& head, Nodo*& tail) {
     while (head != NULL) {
         Nodo* borrar = head;
@@ -206,9 +206,11 @@ int main() {
     Nodo* tail = NULL;
 
     int op, id;
+    
 
+    //Menu de opciones Empresa de Paquetes de Terry
     do {
-        cout << "\n--- EMPRESA DE TERRY ---\n";
+        cout << "\n--- EMPRESA DE PAQUETES DE TERRY ---\n";
         cout << "1. Insertar al final\n";
         cout << "2. Insertar al inicio\n";
         cout << "3. Mostrar adelante\n";
