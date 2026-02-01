@@ -1,12 +1,29 @@
-/* =====================================================
-   PERSONA B
-   - Buscar
-   - Eliminar
-   - Contador
-   - Extra (Editar)
-   - Liberar memoria
-   - main()
-   ===================================================== */
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Estructura del nodo
+struct Nodo {
+    int id;
+    string nombre;
+    float peso;
+    Nodo* sig;
+    Nodo* ant;
+};
+
+// Prototipos de funciones
+bool buscarPorId(Nodo* head, int id);   
+bool eliminarPorId(Nodo*& head, Nodo*& tail, int id); 
+int contarPaquetes(Nodo* head);         
+void editarPaquete(Nodo* head);         
+void liberarLista(Nodo*& head, Nodo*& tail); 
+void insertarInicio(Nodo*& head, Nodo*& tail);
+void insertarFinal(Nodo*& head, Nodo*& tail);
+void mostrarAdelante(Nodo* head);
+void mostrarAtras(Nodo* tail);
+
+
 // ----- Buscar por ID -----
 bool buscarPorId(Nodo* head, int id) {
     while (head != NULL) {
