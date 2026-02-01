@@ -90,3 +90,24 @@ void liberarLista(Nodo*& head, Nodo*& tail) {
     }
     tail = NULL;
 }
+// ----- MAIN -----
+int main() {
+    Nodo* head = NULL;
+    Nodo* tail = NULL;
+
+    int op, id;
+
+    do {
+        cout << "\n--- EMPRESA DE TERRY ---\n";
+        cout << "1. Insertar al final\n";
+        cout << "2. Insertar al inicio\n";
+        cout << "3. Mostrar adelante\n";
+        cout << "4. Mostrar atras\n";
+        cout << "5. Buscar por ID\n";
+        cout << "6. Eliminar por ID\n";
+        cout << "7. Contar paquetes\n";
+        cout << "8. Editar paquete (EXTRA)\n";
+        cout << "0. Salir\n";
+        cout << "Opcion: ";
+        cin >> op;
+
