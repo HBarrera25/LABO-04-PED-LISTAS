@@ -102,6 +102,21 @@ void mostrarAdelante(Nodo* head) {
     }
 }
 
+// Funcion mostrar atras
+void mostrarAtras(Nodo* tail) {
+    if (tail == NULL) {
+        cout << "Lista vacia.\n";
+        return;
+    }
+
+    while (tail != NULL) {
+        cout << "[" << tail->id << "] "
+             << tail->nombre << " - "
+             << tail->peso << "kg\n";
+        tail = tail->ant;
+    }
+}
+
 // Buscar por ID 
 bool buscarPorId(Nodo* head, int id) {
     while (head != NULL) {
