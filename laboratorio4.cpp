@@ -80,3 +80,13 @@ void editarPaquete(Nodo* head) {
     }
     cout << "ID no encontrado.\n";
 }
+
+// ----- Liberar memoria -----
+void liberarLista(Nodo*& head, Nodo*& tail) {
+    while (head != NULL) {
+        Nodo* borrar = head;
+        head = head->sig;
+        delete borrar;
+    }
+    tail = NULL;
+}
