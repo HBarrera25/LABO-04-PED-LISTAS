@@ -55,6 +55,39 @@ void insertarInicio(Nodo*& head, Nodo*& tail) {
     }
 }
 
+// Funcion insertar al final 
+void insertarFinal(Nodo*& head, Nodo*& tail) {
+    int id;
+    cout << "ID: ";
+    cin >> id;
+
+    if (buscarPorId(head, id)) {
+        cout << "ID repetido.\n";
+        return;
+    }
+
+    Nodo* nuevo = new Nodo();
+    nuevo->id = id;
+
+    cout << "Nombre: ";
+    cin.ignore();
+    getline(cin, nuevo->nombre);
+
+    cout << "Peso: ";
+    cin >> nuevo->peso;
+
+    nuevo->sig = NULL;
+    nuevo->ant = tail;
+
+    if (head == NULL) {
+        head = tail = nuevo;
+    } else {
+        tail->sig = nuevo;
+        tail = nuevo;
+    }
+}
+
+
 // Buscar por ID 
 bool buscarPorId(Nodo* head, int id) {
     while (head != NULL) {
